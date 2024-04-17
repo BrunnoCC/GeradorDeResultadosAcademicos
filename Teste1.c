@@ -9,11 +9,11 @@
 
 typedef struct {
     char nome[MAX_NOME];
-    char telefone[15]; // considerando o máximo de 15 caracteres para o telefone
+    char telefone[15];
     char curso[MAX_CURSO];
     float notas[MAX_NOTAS];
     float media;
-    char situacao[10]; // "APROVADO" ou "REPROVADO"
+    char situacao[10];
 } Aluno;
 
 void calcularMediaESituacao(Aluno *aluno) {
@@ -37,14 +37,14 @@ int main() {
         return 1;
     }
 
-    // Ignorar a primeira linha que contém os cabeçalhos das colunas
+
     char cabecalho[100];
     fgets(cabecalho, sizeof(cabecalho), entrada);
 
     Aluno alunos[MAX_ALUNOS];
     int numAlunos = 0;
 
-    // Ler os dados do arquivo de entrada
+
     char linha[100];
     while (fgets(linha, sizeof(linha), entrada) != NULL) {
         sscanf(linha, "%[^,],%[^,],%[^,],%f,%f\n", alunos[numAlunos].nome, alunos[numAlunos].telefone, alunos[numAlunos].curso,
